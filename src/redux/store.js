@@ -1,15 +1,14 @@
-import todosReducer from "./contacts-reducer";
+import todosReducer from "./contacts/contacts-reducer";
 import { configureStore } from "@reduxjs/toolkit";
 
 import { getDefaultMiddleware } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 
+
 const middleware = [
   ...getDefaultMiddleware(),
-  logger,
+  // logger,
 ];
-
-
 
 const store = configureStore({
   reducer: {

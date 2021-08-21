@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import style from "./Form.module.css";
-import { addContact } from "../../redux/contacts-actions.js"
+import { addContact } from "../../redux/contacts/contacts-actions.js"
 import { connect } from 'react-redux'
+import { getItemsRender } from "../../redux/contacts/contacts-selectors";
 
 
 const Form = ({ contacts, addContactItem }) => {
@@ -89,7 +90,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const mapStateToProps = (state) => ({
-  contacts: state.contacts.items,
+  contacts: getItemsRender(state),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form) ;
