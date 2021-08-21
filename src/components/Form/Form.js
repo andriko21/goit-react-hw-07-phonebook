@@ -4,6 +4,7 @@ import style from "./Form.module.css";
 import { addContact } from "../../redux/contacts/contacts-actions.js"
 import { connect } from 'react-redux'
 import { getItemsRender } from "../../redux/contacts/contacts-selectors";
+import { fetchAddContacts } from "../../redux/contacts/contacts-operations";
 
 
 const Form = ({ contacts, addContactItem }) => {
@@ -86,7 +87,7 @@ const Form = ({ contacts, addContactItem }) => {
   );
 };
 const mapDispatchToProps = dispatch => ({
-  addContactItem: data => dispatch(addContact(data))
+  addContactItem: data => dispatch(fetchAddContacts(data))
 })
 
 const mapStateToProps = (state) => ({
