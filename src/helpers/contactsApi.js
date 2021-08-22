@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE = "http://localhost:4040/contacts";
+const BASE = "http://localhost:3030/contacts";
 
 export const getContacts = async () => {
   try {
